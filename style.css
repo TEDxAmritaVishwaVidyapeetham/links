@@ -1,0 +1,94 @@
+:root {
+  --link-bg: white;
+  --link-text: #222;
+  --link-hover: #eee;
+  --link-border: 3px solid rgb(45, 45, 45);
+  --link-box-shadow: 2px 2px;
+  --footer-color: #777;
+  --page-bg: #fff;
+  --logo: url("light-logo.png");
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --link-bg: #e62b1e;
+    --link-text: #fff;
+    --link-hover: #bb1b10;
+    --link-border: 3px solid #0e0d14;
+    --link-box-shadow: 0 0;
+    --page-bg: #0e0d14;
+    --logo: url("dark-logo.png");
+  }
+}
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100vh;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: Quicksand, -apple-system, Helvetica Neue, BlinkMacSystemFont,
+    Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
+    sans-serif;
+  font-weight: 600;
+  justify-content: space-between;
+  background-color: var(--page-bg);
+}
+
+nav {
+  padding: 5vw;
+}
+
+.logo {
+  background-image: var(--logo);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 90px;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  gap: 20px;
+  width: min(400px, 80vw);
+  user-select: none;
+}
+
+.links a {
+  background-color: var(--link-bg);
+  padding: 15px;
+  border: var(--link-border);
+  border-radius: 5px;
+  text-align: center;
+  text-decoration: none;
+  color: var(--link-text);
+  transition: all 0.2s ease;
+  font-size: 20px;
+  box-shadow: var(--link-box-shadow);
+}
+
+.links a:hover {
+  background-color: var(--link-hover);
+}
+
+.links a:active {
+  transform: translate(2px, 2px);
+  box-shadow: 0 0;
+}
+
+footer {
+  text-align: center;
+  padding: 25px;
+  color: var(--footer-color);
+}
